@@ -12,7 +12,7 @@ const page = () => {
         </div>
         <Searchform/>
       </section>
-
+    
     </main>
   )
 }
