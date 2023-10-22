@@ -22,9 +22,14 @@ const Navbar = () => {
             className="block md:hidden" />
 
             <ul className="flex-center gap-x-3 max-md:hidden md:gap-x-10">
-                <li>
+                <li className="body-text text-gradient_blue-purple !font-bold">
                     <Link href="https://www.youtube.com/watch?v=3WCIyNOrzwM" target='_blank'>
                         Next js Course</Link>
+                </li>
+
+                <li className="body-text !font-normal">
+                    <Link href="https://www.jsmastery.pro/" target='_blank'>
+                        Master Class</Link>
                 </li>
 
             </ul>
