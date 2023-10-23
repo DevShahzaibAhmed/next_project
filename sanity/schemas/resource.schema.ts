@@ -2,7 +2,7 @@ const schema={
   name: 'resource',
   title: 'Resource',
   type: 'document',
-  field:[ 
+  fields:[ 
     {
       name: 'title',
       title: 'Title',
@@ -56,3 +56,4 @@ const schema={
   ]
 
 }
+export default schema;
