@@ -1,5 +1,6 @@
 import { groq } from "next-sanity";
 import { Readclient } from "./lib/client";
+import { buildQuery } from "./utils";
 
 interface GetResourcesParams{
     query: string;
@@ -13,7 +14,11 @@ export const getResources=async (params:GetResourcesParams)=> {
 
     try {
         const resources = await Readclient.fetch(
-            groq``
+            groq`${buildQuery({
+                type: 'resource',
+                
+
+            })}`
         )
         
     }  catch (err) {
