@@ -19,7 +19,18 @@ interface Props {
 const ResourceCard = ({id, downloadNumber, title, image, slug}:
     Props) => {
   return (
-    <div>ResourceCard</div>
+        <Card>
+            <CardHeader>
+                <CardTitle>Card Title</CardTitle>
+                <CardDescription>Card Description</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <p>Card Content</p>
+            </CardContent>
+            <CardFooter>
+            <p>Card Footer</p>
+            </CardFooter>
+        </Card>
   )
 }
 
