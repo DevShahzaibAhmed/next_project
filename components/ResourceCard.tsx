@@ -1,3 +1,12 @@
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card"
+  
 interface Props {
     id:string;
     title:string;
