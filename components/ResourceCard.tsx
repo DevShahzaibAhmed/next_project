@@ -1,6 +1,14 @@
-import React from 'react'
+interface Props {
+    id:string;
+    title:string;
+    image:string;
+    downloadNumber:number;
+    slug:string;
+}
 
-const ResourceCard = () => {
+
+const ResourceCard = ({id, downloadNumber, title, image, slug}:
+    Props) => {
   return (
     <div>ResourceCard</div>
   )

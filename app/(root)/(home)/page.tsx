@@ -29,7 +29,15 @@ const page = async() => {
           {
             resources?.length>0 ? (
               resources.map((resource:any)=>(
-                <ResourceCard/>
+                <ResourceCard
+                key={resource.id}
+                title={resource.title}
+                id={resource.id}
+                image={resource.image}
+                downloadNumber={resource.views}
+                slug={resource.id}
+                
+                />
               )
             )
             ):(
