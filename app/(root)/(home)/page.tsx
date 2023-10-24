@@ -1,8 +1,15 @@
 import Filters from '@/components/ui/Filters'
 import Searchform from '@/components/ui/Searchform'
+import { getResources } from '@/sanity/actions'
 import React from 'react'
 
-const page = () => {
+const page = async() => {
+    const resources=await getResources({
+      query: '',
+      category: '',
+      page: '1'
+    })
+
   return (
     <main className="flex-center paddings mx-auto w-full max-w-screen-2xl flex-col">
 
@@ -13,6 +20,26 @@ const page = () => {
         <Searchform/>
       </section>
       <Filters/>
+
+      <section className="w-full flex-center mt-6 flex-col sm:mt-20 ">
+        Header
+
+        <div className="flex w-full mt-12 flex-wrap justify-center gap-16 sm:justify-start">
+          {
+            resources?.length>0 ? (
+              resources.map((resource:any)=>(
+                <ResourceCard/>
+              )
+            )
+            ):(
+              <p className="body-regular text-white-400 ">
+                No Resources Found
+              </p>
+            )}
+
+        </div>
+
+      </section>
     </main>
   )
 }
