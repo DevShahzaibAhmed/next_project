@@ -1,5 +1,6 @@
 import ResourceCard from '@/components/ResourceCard'
 import Filters from '@/components/ui/Filters'
+import Header from '@/components/ui/Header'
 import Searchform from '@/components/ui/Searchform'
 import { getResources } from '@/sanity/actions'
 import React from 'react'
@@ -23,7 +24,7 @@ const page = async() => {
       <Filters/>
 
       <section className="w-full flex-center mt-6 flex-col sm:mt-20 ">
-        Header
+        <Header/>
 
         <div className="flex w-full mt-12 flex-wrap justify-center gap-16 sm:justify-start">
           {
