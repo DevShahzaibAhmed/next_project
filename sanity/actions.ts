@@ -14,9 +14,25 @@ export const getResources=async (params:GetResourcesParams)=> {
 
     try {
         const resources = await Readclient.fetch(
-            groq` ${buildQuery({})}`
-        )
+            groq`${buildQuery({
+                type:'resource',
+                query,
+                category,
+                page:parseInt(page),
+    })}
+    {
+        title,
+        _id,
+        downloadlink,
+        "image":poster.asset->url,
+        views,
+        slug,
+        category,
+    }` 
+    );
+    return resources;
         
-    }  catch (err) {
+    }  catch (error) {
+        console.log(error);
     }
 }
