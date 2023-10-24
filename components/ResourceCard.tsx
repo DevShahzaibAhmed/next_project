@@ -1,8 +1,6 @@
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
@@ -16,11 +14,10 @@ interface Props {
     title:string;
     image:string;
     downloadNumber:number;
-    slug:string;
 }
 
 
-const ResourceCard = ({id, downloadNumber, title, image, slug}:
+const ResourceCard = ({id, downloadNumber, title, image}:
     Props) => {
   return (
         <Card className="w-full max-w-fit border-0 !bg-transparent sm:max-w-[365px]">
@@ -44,7 +41,11 @@ const ResourceCard = ({id, downloadNumber, title, image, slug}:
                     <Image src="/downloads.svg" width={20} height={20} alt="download"/>
                     {downloadNumber}
                 </div>
-                
+                <Link href={`/resource/${id}`} className="flex-center text-gradient_purple-blue body-semibold gap-1.5">
+                    Download Now
+                    <Image src="/arrow-blue.svg" width={13} height={10} alt="arrow"/>
+
+                </Link>
             </CardContent>
            
         </Card>

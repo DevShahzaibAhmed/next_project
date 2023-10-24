@@ -35,8 +35,6 @@ const page = async() => {
                 id={resource.id}
                 image={resource.image}
                 downloadNumber={resource.views}
-                slug={resource.id}
-                
                 />
               )
             )
