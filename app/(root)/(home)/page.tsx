@@ -1,3 +1,4 @@
+import ResourceCard from '@/components/ResourceCard'
 import Filters from '@/components/ui/Filters'
 import Searchform from '@/components/ui/Searchform'
 import { getResources } from '@/sanity/actions'
