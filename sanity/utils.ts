@@ -19,7 +19,6 @@ export function buildQuery(params: BuildQueryParams) {
     conditions.push(`category == "${category}"`);
   }
 
-  // Calculate pagination limits
   const offset = (page - 1) * perPage;
   const limit = perPage;
 
