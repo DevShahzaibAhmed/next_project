@@ -40,6 +40,10 @@ interface urlQueryParams{
 export function formUrlQuery({params, key, value}:urlQueryParams){
     const currentUrl=qs.parse(params);
 
-    console.log(currentUrl, key, value);
+    currentUrl[key] = value;
+    return qs.stringify(
+        {url:window.location.pathname, query:currentUrl},
+        {skipNull: true}
+        )
 
 }
