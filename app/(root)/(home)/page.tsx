@@ -10,7 +10,6 @@ interface Props{
 }
 
 const page = async({searchParams}:Props) => {
-  console.log(searchParams)
     const resources=await getResources({
       query: '',
       category: '',
