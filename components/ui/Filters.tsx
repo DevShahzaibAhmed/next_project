@@ -7,6 +7,8 @@ const links=['All', 'Next 13', 'FrontEnd', 'Backend', 'FullStack']
 const Filters = () => {
     const [active, setActive] = useState('');
     const handleFilter=(link:string) => {
+        let newUrl = '';
+        
         setActive(link);
     };
   return (

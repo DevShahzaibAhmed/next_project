@@ -5,7 +5,12 @@ import Searchform from '@/components/ui/Searchform'
 import { getResources } from '@/sanity/actions'
 import React from 'react'
 
-const page = async() => {
+interface Props{
+  searchParams:{[key: string]: string|undefined}
+}
+
+const page = async({searchParams}:Props) => {
+  console.log(searchParams)
     const resources=await getResources({
       query: '',
       category: '',
