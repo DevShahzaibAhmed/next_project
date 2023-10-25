@@ -41,7 +41,7 @@ export function formUrlQuery({params, key, value}:urlQueryParams){
     const currentUrl=qs.parse(params);
 
     currentUrl[key] = value;
-    return qs.stringify(
+    return qs.stringifyUrl(
         {url:window.location.pathname, query:currentUrl},
         {skipNull: true}
         )
