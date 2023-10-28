@@ -4,12 +4,22 @@ import React, { useEffect, useState } from 'react'
 import { Input } from "@/components/ui/input"
 
 import { form } from 'sanity/desk'
+import { formUrlQuery } from '@/sanity/utils'
+import {usePathname, useRouter, useSearchParams} from 'next/navigation'
 
 const Searchform = () => {
+  cost SearchParams=useSearchParams();
+  const Routes=useRouter();
+  const pathname=usePathname();
     const [search, setSearch]=useState('');
     useEffect(() => {
       const delayDebounceFn=setTimeout(() =>{
-        console.log(search);
+        if(search){
+          const newUrl=formUrlQuery({
+            params:
+
+          })
+        }
       },300);
     
       return ()=>clearTimeout(delayDebounceFn);
