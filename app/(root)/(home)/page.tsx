@@ -11,7 +11,7 @@ interface Props{
 
 const page = async({searchParams}:Props) => {
     const resources=await getResources({
-      query: '',
+      query: searchParams?.query||'',
       category: searchParams?.category||'',
       page: '1'
     })
@@ -28,8 +28,12 @@ const page = async({searchParams}:Props) => {
       <Filters/>
 
       <section className="w-full flex-center mt-6 flex-col sm:mt-20 ">
-        <Header/>
+        <Header
+        title= "Resources"
+        query={searchParams?.query||''}
+        category={searchParams?.category||''}
 
+        />
         <div className="flex w-full mt-12 flex-wrap justify-center gap-16 sm:justify-start">
           {
             resources?.length>0 ? (
