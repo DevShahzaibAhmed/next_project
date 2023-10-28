@@ -1,12 +1,21 @@
 "use client"
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Input } from "@/components/ui/input"
 
 import { form } from 'sanity/desk'
 
 const Searchform = () => {
     const [search, setSearch]=useState('');
+    useEffect(() => {
+      const delayDebounceFn=setTimeout(() =>{
+        console.log(search);
+      },300);
+    
+      return ()=>clearTimeout(delayDebounceFn);
+    }, [search])
+    
+
   return (
     <form className='flex-center mx-auto mt-10 w-full sm:-mt-10 sm:px-5'>
         <label className='flex-center relative w-full max-w-3xl'>
@@ -18,7 +27,6 @@ const Searchform = () => {
         placeholder="Serach"
         value={search}
         onChange={(e)=>setSearch(e.target.value)}
-        
         />
 
         </label>
