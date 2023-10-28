@@ -26,8 +26,9 @@ const Searchform = () => {
             newUrl=formUrlQuery({
               params:SearchParams.toString(),
               keysToRemove:['query']
+            })
         }
-        Router.push(newUrl,{scroll:false});
+        Router.push(newUrl, {scroll:false});
       },300);
     
       return ()=>clearTimeout(delayDebounceFn);
