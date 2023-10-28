@@ -27,35 +27,38 @@ const page = async({searchParams}:Props) => {
       </section>
       <Filters/>
 
-      <section className="w-full flex-center mt-6 flex-col sm:mt-20 ">
-        <Header
-        title= "Resources"
-        query={searchParams?.query||''}
-        category={searchParams?.category||''}
+      {(searchParams?.query||searchParams?.category)&&(
+      
+            <section className="w-full flex-center mt-6 flex-col sm:mt-20 ">
+              <Header
+              title= "Resources"
+              query={searchParams?.query||''}
+              category={searchParams?.category||''}
 
-        />
-        <div className="flex w-full mt-12 flex-wrap justify-center gap-16 sm:justify-start">
-          {
-            resources?.length>0 ? (
-              resources.map((resource:any)=>(
-                <ResourceCard
-                key={resource.id}
-                title={resource.title}
-                id={resource.id}
-                image={resource.image}
-                downloadNumber={resource.views}
-                />
-              )
-            )
-            ):(
-              <p className="body-regular text-white-400 ">
-                No Resources Found
-              </p>
-            )}
+              />
+              <div className="flex w-full mt-12 flex-wrap justify-center gap-16 sm:justify-start">
+                {
+                  resources?.length>0 ? (
+                    resources.map((resource:any)=>(
+                      <ResourceCard
+                      key={resource.id}
+                      title={resource.title}
+                      id={resource.id}
+                      image={resource.image}
+                      downloadNumber={resource.views}
+                      />
+                    )
+                  )
+                  ):(
+                    <p className="body-regular text-white-400 ">
+                      No Resources Found
+                    </p>
+                  )}
 
-        </div>
+              </div>
 
-      </section>
+            </section>
+      )}
     </main>
   )
 }
