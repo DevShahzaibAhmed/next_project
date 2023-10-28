@@ -8,18 +8,26 @@ import { formUrlQuery } from '@/sanity/utils'
 import {usePathname, useRouter, useSearchParams} from 'next/navigation'
 
 const Searchform = () => {
-  cost SearchParams=useSearchParams();
-  const Routes=useRouter();
+  const SearchParams=useSearchParams();
+  const Router=useRouter();
   const pathname=usePathname();
     const [search, setSearch]=useState('');
     useEffect(() => {
       const delayDebounceFn=setTimeout(() =>{
+        let newUrl='';
         if(search){
-          const newUrl=formUrlQuery({
-            params:
-
+          newUrl=formUrlQuery({
+            params:SearchParams.toString(),
+            key:'query',
+            value:search
           })
         }
+        else{
+            newUrl=formUrlQuery({
+              params:SearchParams.toString(),
+              keysToRemove:['query']
+        }
+        Router.push(newUrl,{scroll:false});
       },300);
     
       return ()=>clearTimeout(delayDebounceFn);
