@@ -1,10 +1,11 @@
 interface Props {
-  type: string;
+  //type: string;
   query: string;
   category: string;
+  title:string;
 }
 
-const Header = ({type, query, category}:Props) => {
+const Header = ({ query, category, title}:Props) => {
   if(query && category)
   {
     return (

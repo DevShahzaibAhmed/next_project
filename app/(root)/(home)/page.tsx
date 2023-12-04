@@ -3,10 +3,13 @@ import Filters from '@/components/ui/Filters'
 import Header from '@/components/ui/Header'
 import Searchform from '@/components/ui/Searchform'
 import { getResources } from '@/sanity/actions'
+import { title } from 'process'
 import React from 'react'
 
 interface Props{
-  searchParams:{[key: string]: string|undefined}
+  searchParams:{[key: string]: string|undefined};
+  title?:string;
+
 }
 
 const page = async({searchParams}:Props) => {
@@ -31,7 +34,7 @@ const page = async({searchParams}:Props) => {
       
             <section className="w-full flex-center mt-6 flex-col sm:mt-20 ">
               <Header
-              title= "Resources"
+             title= {title ||"Resources"}
               query={searchParams?.query||''}
               category={searchParams?.category||''}
 
